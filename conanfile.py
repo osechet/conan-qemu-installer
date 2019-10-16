@@ -23,7 +23,6 @@ class QEmuInstallerConan(ConanFile):
     settings = "os_build", "arch_build", "compiler", "arch"
     options = {"version": AVAILABLE_VERSIONS}
     default_options = {"version": [v for v in AVAILABLE_VERSIONS if "-" not in v][0]}
-    #generators = "cmake"
     exports = "LICENSE"
 
     @property

@@ -23,7 +23,7 @@ def main():
 
     for version in AVAILABLE_VERSIONS:
         # New mode, with version field
-        builder.add({"os" : current_os, "arch_build" : arch, "arch": arch}, {}, {}, {}, reference="cmake_installer/%s" % version)
+        builder.add({"os" : current_os, "arch_build" : arch, "arch": arch}, {}, {}, {}, reference="qemu_installer/%s" % version)
 
     builder.run()
 
