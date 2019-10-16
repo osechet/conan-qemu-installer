@@ -13,7 +13,6 @@ AVAILABLE_VERSIONS = [
 
 class QEmuInstallerConan(ConanFile):
     name = "qemu_installer"
-    version = "4.1.0"
     license = "MIT"
     author = "Olivier Sechet"
     url = "https://gitlab.com/osechet/conan-qemu-installer"
