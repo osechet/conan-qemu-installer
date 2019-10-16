@@ -17,7 +17,7 @@ def detected_os():
     return platform.system()
 
 def main():
-    command = "sudo apt-get -qq update && sudo apt-get -qq install -y libglib2.0-dev"
+    command = "sudo yum install -y libglib2.0-dev"
 
     arch = os.environ["CONAN_ARCHS"]
     builder = ConanMultiPackager(docker_entry_script=command)
