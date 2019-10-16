@@ -17,6 +17,8 @@ if [[ "$(uname -s)" == 'Darwin' ]]; then
     pyenv virtualenv 3.7.1 conan
     pyenv rehash
     pyenv activate conan
+else
+    apt-get install libglib2.0-dev
 fi
 
 wget https://bootstrap.pypa.io/get-pip.py && python get-pip.py
