@@ -18,7 +18,9 @@ if [[ "$(uname -s)" == 'Darwin' ]]; then
     pyenv rehash
     pyenv activate conan
 else
-    sudo apt-get install -y libglib2.0-dev
+    sudo apt-get install -y build-essential zlib1g-dev pkg-config libglib2.0-dev binutils-dev \
+        libboost-all-dev autoconf libtool libssl-dev libpixman-1-dev libpython-dev python-pip \
+        python-capstone virtualenv
 fi
 
 wget https://bootstrap.pypa.io/get-pip.py && python get-pip.py
