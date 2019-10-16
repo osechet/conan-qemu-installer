@@ -17,7 +17,9 @@ def detected_os():
     return platform.system()
 
 def main():
-    command = "sudo apt-get -qq update && sudo apt-get -qq install -y libglib2.0-dev"
+    command = "sudo apt-get -qq update && sudo apt-get -qq install -y build-essential zlib1g-dev \
+        pkg-config libglib2.0-dev binutils-dev libboost-all-dev autoconf libtool libssl-dev \
+            libpixman-1-dev libpython-dev python-pip python-capstone virtualenv"
 
     arch = os.environ["CONAN_ARCHS"]
     builder = ConanMultiPackager(docker_entry_script=command)
