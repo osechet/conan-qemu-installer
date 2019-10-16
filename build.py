@@ -17,13 +17,15 @@ def detected_os():
     return platform.system()
 
 def main():
+    command = "sudo apt-get -qq update && sudo apt-get -qq install -y libglib2.0-dev"
+
     arch = os.environ["CONAN_ARCHS"]
-    builder = ConanMultiPackager()
+    builder = ConanMultiPackager(docker_entry_script=command)
     current_os = detected_os()
 
     for version in AVAILABLE_VERSIONS:
-        # New mode, with version field
-        builder.add({"os" : current_os, "arch_build" : arch, "arch": arch}, {}, {}, {}, reference="qemu_installer/%s" % version)
+        builder.add({"os" : current_os, "arch_build" : arch, "arch": arch}, {}, {}, {},
+                    reference="qemu_installer/%s" % version)
 
     builder.run()
 
